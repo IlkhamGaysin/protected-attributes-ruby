@@ -8,11 +8,13 @@ class Vehicle
     @number_of_wheels = number_of_wheels
   end
 
-  def ===(another_vehicle)
+  def ==(another_vehicle)
     raise ObjectMismatcError unless another_vehicle.is_a? self.class
 
     @number_of_wheels == another_vehicle.number_of_wheels
   end
+
+  alias_method :===, :==
 end
 
 class Animal
@@ -23,11 +25,13 @@ class Animal
     @number_of_legs = number_of_legs
   end
 
-  def ===(another_animal)
+  def ==(another_animal)
     raise ObjectMismatcError unless another_animal.is_a? self.class
 
     @number_of_legs == another_animal.number_of_legs
   end
+
+  alias_method :===, :==
 end
 
 
@@ -39,9 +43,11 @@ class Human
     @number_of_arms = number_of_arms
   end
 
-  def ===(another_human)
+  def ==(another_human)
     raise ObjectMismatcError unless another_human.is_a? self.class
 
     @number_of_arms == another_human.number_of_arms
   end
+
+  alias_method :===, :==
 end
